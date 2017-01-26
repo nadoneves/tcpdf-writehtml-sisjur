@@ -11,7 +11,7 @@ class MYPDF extends TCPDF {
         $image_file = './img/relatorio/brasaoEstadual.jpg';
         $this->Image($image_file, 90, 10, 30, '', 'JPG', '', 'N', false, 300, '', false, false, 0, false, false, false);
         // Set font
-        $this->SetFont('helvetica', 'N', 8);
+        $this->SetFont('helvetica', 'N', 9);
         // Title
         $this->Cell(0, 0, 'Governo do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(0, 0, 'Secretaria da Casa Civil', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
