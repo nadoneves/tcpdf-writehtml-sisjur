@@ -9,13 +9,13 @@ class MYPDF extends TCPDF {
     public function Header() {
         // Logo
         $image_file = './img/relatorio/brasaoEstadual.jpg';
-        $this->Image($image_file, 90, 10, 30, '', 'JPG', '', 'N', false, 300, '', false, false, 0, false, false, false);
+        $this->Image($image_file, 96, 10, 30, '', 'JPG', '', 'N', false, 300, '', false, false, 0, false, false, false);
         // Set font
-        $this->SetFont('helvetica', 'N', 9);
+        $this->SetFont('times', 'N', 9);
         // Title
-        $this->Cell(0, 0, 'Governo do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(0, 0, 'Secretaria da Casa Civil', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(0, 0, 'Departamento de Trânsito do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 1.5, 'Governo do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 1.5, 'Secretaria da Casa Civil', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 1.5, 'Departamento de Trânsito do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
     }
 
     // Page footer
@@ -40,7 +40,7 @@ $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+$pdf->SetHeaderData(PDF_HEADER_LOGO, 30, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -50,9 +50,9 @@ $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, 55, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+$pdf->SetMargins(30, 60, 20);
+$pdf->SetHeaderMargin(60);
+$pdf->SetFooterMargin(25);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
@@ -68,23 +68,23 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 
 // ---------------------------------------------------------
 
-for($i = 0; $i < 10; $i++){
+//for($i = 0; $i < 10; $i++){
     $pdf->AddPage();
 
     if(true){
-        $pdf->SetFont('times', 'N', 10);
+        $pdf->SetFont('Helvetica', 'N', 10);
         $html = '
-            <table>
+            <table  cellspacing="6">
                 <tr>
                     <td style="text-align: center;" colspan="2">Serviço Público Estadual</td>
-                </tr>
+                </tr>                
                 <tr>
-                    <td colspan="2">Processo nº. OF161216/161216/161216/2015</td>
-                </tr>
+                    <td colspan="2">Processo nº. E-12/</td>
+                </tr>                
                 <tr>
                     <td>Data:</td>
                     <td>Fls:</td>
-                </tr>
+                </tr>                
                 <tr>
                     <td>Rubrica:</td>
                     <td>ID:</td>
@@ -93,9 +93,9 @@ for($i = 0; $i < 10; $i++){
         ';
         $pdf->writeHTMLCell(
             70,
-            30,
-            130,
-            10,
+            35,
+            136,
+            5,
             $html,
             1,
             1,
@@ -107,11 +107,11 @@ for($i = 0; $i < 10; $i++){
     }
 
     if(true){
-        $pdf->SetFont('times', 'B', 12);
+        $pdf->SetFont('times', 'N', 12);
         $html = '
-            <table>
+            <table cellspacing="6">
                 <tr>
-                    <td>Of.DETRAN-RJ/DIJUR nº 00000/2016</td>
+                    <td><strong>Of.DETRAN-RJ/DIJUR nº 00000/2016</strong></td>
                     <td style="text-align: right">Rio de Janeiro, 26 de Janeiro de 2017</td>
                 </tr>
                 <tr>
@@ -120,10 +120,10 @@ for($i = 0; $i < 10; $i++){
             </table>
         ';
         $pdf->writeHTMLCell(
-            190,
-            10,
-            10,
-            55,
+            160,
+            0,
+            30,
+            60,
             $html,
             0,
             1,
@@ -137,7 +137,7 @@ for($i = 0; $i < 10; $i++){
     if(true){
         $pdf->SetFont('times', 'N', 12);
         $html = '
-            <table>
+            <table cellspacing="1">
                 <tr>                
                     <td>Processo nº. 0112774-14-2013.8.19.0001</td>
                 </tr>
@@ -147,10 +147,10 @@ for($i = 0; $i < 10; $i++){
             </table>
         ';
         $pdf->writeHTMLCell(
-            190,
-            10,
-            10,
-            70,
+            160,
+            0,
+            30,
+            77,
             $html,
             0,
             1,
@@ -164,7 +164,7 @@ for($i = 0; $i < 10; $i++){
     if(true){
         $pdf->SetFont('times', 'N', 12);
         $html = '
-            <table>
+            <table cellspacing="1">
                 <tr>                
                     <td>Exmo. Sr. Juiz</td>
                 </tr>
@@ -174,10 +174,10 @@ for($i = 0; $i < 10; $i++){
             </table>
         ';
         $pdf->writeHTMLCell(
-            190,
-            10,
-            10,
-            90,
+            160,
+            0,
+            30,
+            95,
             $html,
             0,
             1,
@@ -191,28 +191,31 @@ for($i = 0; $i < 10; $i++){
     if(true){
         $pdf->SetFont('times', 'N', 12);
         $html = '
-            <ol>
+            <ol style="text-align: justify">
                 <li>Modelo para associar 2 testeMussum Ipsum, cacilds vidis lit<span style="font-family:Comic Sans MS,cursive">ro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat ri</span>sus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m<strong>&eacute; pra quem &eacute; amistosis quis leo. Sapien in m</strong>onti palavris qui num significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</li>
                 <li>Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associar 2 teste</li>
             </ol>
 
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois d<u>ivoltis porris, paradis. Nullam volutpat r</u>isus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.<br />
+            <p style="text-align: justify">Mussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois d<u>ivoltis porris, paradis. Nullam volutpat r</u>isus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.<br />
             Casamentiss faiz malandris se pirul<em>it&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce recei</em>ta de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.<br />
             Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associar 2 teste<br />
             Mussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.</p>
 
-            <ul>
+            <ul style="text-align: justify">
                 <li>Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce recei<span style="font-family:Georgia,serif">ta de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, ar</span>cu quam euismod magna.aumentar mais o tamanhaoModelo para associar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num<span style="font-family:Arial,Helvetica,sans-serif"> significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</span></li>
-                <li><span style="font-family:Arial,Helvetica,sans-serif">Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associ</span>ar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhao5299Modelo para associar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim tstestest xvxc vxcvxcvcxv&nbsp; cxdvxcvl&ccedil;xc, vl&ccedil;lv~&ccedil;xc. 4</li>
+                <li><span style="font-family:Arial,Helvetica,sans-serif">Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associ</span>ar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius.  </li>
             </ul>
         ';
         $pdf->writeHTML($html, true, false, false, false, '');
     }
 
     if(true){
-        $pdf->SetFont('times', 'N', 12);
+        $pdf->SetFont('times', 'N', 12);          
+
+        //echo $height;
+
         $html = '
-            <table>
+            <table nobr="true">
                 <tr>                
                     <td><strong>JOÃO JOSÉ DA SILVA XAVIER</strong></td>
                 </tr>
@@ -221,26 +224,20 @@ for($i = 0; $i < 10; $i++){
                 </tr>
                 <tr>
                     <td>Diretoria Jurídica - DETRAN-RJ</td>
-                </tr>
+                </tr>                
             </table>
-        ';
-        $pdf->writeHTMLCell(
-            190,
-            10,
-            10,
-            $pdf->getY() + ($pdf->getY() - $pdf->getPage()),
-            $html,
-            0,
-            1,
-            false,
-            true,
-            'L',
-            true
-        );
-    }
-
+        ';        
+        $pdf2 = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+        $pdf2->addpage();     
+        $pdf2->writeHTML($html, true, false, false, false, '');   
+        $height = $pdf2->getPageHeight($pdf2->getNumPages());
+        for($z = 1; $z <= $pdf2->getNumPages(); $z++)
+        { $pdf2->deletePage($z); }
+        $pdf->checkPageBreak($height);
+        $pdf->writeHTML($html, true, false, false, false, ''); 
+    }      
     $pdf->lastPage();
-}
+//}
 
 // ---------------------------------------------------------
 
