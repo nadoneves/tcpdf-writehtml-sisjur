@@ -13,9 +13,15 @@ class MYPDF extends TCPDF {
         // Set font
         $this->SetFont('times', 'N', 9);
         // Title
-        $this->Cell(0, 1.5, 'Governo do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(0, 1.5, 'Secretaria da Casa Civil', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(0, 1.5, 'Departamento de Trânsito do Estado do Rio de Janeiro', 0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 2, 
+            'Governo do Estado do Rio de Janeiro', 
+            0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 2, 
+            'Secretaria da Casa Civil', 
+            0, 1, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 2, 
+            'Departamento de Trânsito do Estado do Rio de Janeiro', 
+            0, 1, 'C', 0, '', 0, false, 'M', 'M');
     }
 
     // Page footer
@@ -203,7 +209,9 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 
             <ul style="text-align: justify">
                 <li>Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce recei<span style="font-family:Georgia,serif">ta de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, ar</span>cu quam euismod magna.aumentar mais o tamanhaoModelo para associar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num<span style="font-family:Arial,Helvetica,sans-serif"> significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</span></li>
-                <li><span style="font-family:Arial,Helvetica,sans-serif">Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associ</span>ar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius.  </li>
+                <li><span style="font-family:Arial,Helvetica,sans-serif">Manduma pindureta quium dia nois paga. Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Atirei o pau no gatis, per gatis num morreus. Copo furadis &eacute; disculpa de bebadis, arcu quam euismod magna.aumentar mais o tamanhaoModelo para associ</span>ar 2 testeMussum Ipsum, cacilds vidis litro abertis. Pra l&aacute; , depois divoltis porris, paradis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. in elementis m&eacute; pra quem &eacute; amistosis quis leo. Sapien in monti palavris qui num significa nadis i pareci latim.Casamentiss faiz malandris se pirulit&aacute;. Delegadis gente finis, bibendum egestas augue arcu ut est. A ordem dos tratores n&atilde;o altera o p&atilde;o duris Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius.  
+                Aenean aliquam molestie leo, vitae iaculis nisl.mais bolis eu num gostis. Viva Forevis aptent taciti sociosqu ad litora torquent Per aumento de cachacis, eu reclamis. Posuere libero varius.  
+                </li>
             </ul>
         ';
         $pdf->writeHTML($html, true, false, false, false, '');
@@ -214,8 +222,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 
         //echo $height;
 
-        $html = '
+        $html = '            
             <table nobr="true">
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
                 <tr>                
                     <td><strong>JOÃO JOSÉ DA SILVA XAVIER</strong></td>
                 </tr>
@@ -227,13 +238,6 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
                 </tr>                
             </table>
         ';        
-        $pdf2 = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-        $pdf2->addpage();     
-        $pdf2->writeHTML($html, true, false, false, false, '');   
-        $height = $pdf2->getPageHeight($pdf2->getNumPages());
-        for($z = 1; $z <= $pdf2->getNumPages(); $z++)
-        { $pdf2->deletePage($z); }
-        $pdf->checkPageBreak($height);
         $pdf->writeHTML($html, true, false, false, false, ''); 
     }      
     $pdf->lastPage();
